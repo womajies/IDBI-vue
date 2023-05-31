@@ -17,7 +17,8 @@ swiperCore.use([Navigation, Scrollbar, Pagination])
 
 const toastrConfigs = {
   position: 'top right',
-  showDuration: 2000
+  showDuration: 2000,
+  timeOut: 4000
 }
 Vue.use(cxltToastr, toastrConfigs)
 

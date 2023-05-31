@@ -1,0 +1,13 @@
+.toast {
+  transition: opacity $transition-duration $transition-timing-function,
+    box-shadow $transition-duration $transition-timing-function;
+
+  &-title {
+    line-height: 1.3em;
+  }
+
+  &-message {
+    margin-top: 8px;
+    line-height: 1.3em;
+  }
+}

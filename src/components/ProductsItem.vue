@@ -109,13 +109,25 @@ export default {
         if (index !== -1) {
           this.$store.commit('REMOVE_FAVORITE_PRODUCT', index)
           this.isFavorite = false
+          this.$toast.error({
+            title: 'Удалено из избранных',
+            message: `${this.item.name}`
+          })
         } else {
           this.$store.commit('ADD_FAVORITE_PRODUCT', this.item)
           this.isFavorite = true
+          this.$toast.success({
+            title: 'В избранное',
+            message: `${this.item.name}`
+          })
         }
       } else {
         this.$store.commit('ADD_FAVORITE_PRODUCT', this.item)
         this.isFavorite = true
+        this.$toast.success({
+          title: 'В избранное',
+          message: `${this.item.name}`
+        })
       }
     },
 
@@ -124,11 +136,23 @@ export default {
         const index = this.getBasketProducts.indexOf(this.item)
         if (index !== -1) {
           this.$store.commit('REMOVE_BASKET_PRODUCT', index)
+          this.$toast.error({
+            title: 'Удален из корзины',
+            message: `${this.item.name}`
+          })
         } else {
           this.$store.commit('ADD_BASKET_PRODUCT', this.item)
+          this.$toast.success({
+            title: 'Добавлен в корзину',
+            message: `${this.item.name}`
+          })
         }
       } else {
         this.$store.commit('ADD_BASKET_PRODUCT', this.item)
+        this.$toast.success({
+          title: 'Добавлен в корзину',
+          message: `${this.item.name}`
+        })
       }
     },
 
